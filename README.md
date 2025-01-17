@@ -2,9 +2,9 @@
 
 1. Create Azure resources:
     - Create a [resource group](https://portal.azure.com/?quickstart=true#browse/resourcegroups)
-    - Create a [Container App Session Pool](https://portal.azure.com/?quickstart=true#create/hub)
+    - Create a [Container App Session Pool](https://portal.azure.com/?quickstart=true#create/hub) - choose either Python or NodeJS
     - Create an access token
-    
+
         ```
         az login
         az account get-access-token --resource https://dynamicsessions.io
