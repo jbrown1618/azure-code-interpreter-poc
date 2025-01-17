@@ -15,7 +15,7 @@ print("Hello, Python!")
 """
 
 url = f"https://{os.getenv('AZ_REGION')}.dynamicsessions.io/subscriptions/{os.getenv('AZ_SUBSCRIPTION_ID')}/resourceGroups/{os.getenv('AZ_RESOURCE_GROUP')}/sessionPools/{os.getenv('AZ_SESSION_POOL_NAME')}/code/execute?api-version=2024-02-02-preview&identifier={os.getenv('AZ_SESSION_IDENTIFIER')}"
-
+headers={"Authorization": f"Bearer {os.getenv('AZ_TOKEN')}"}
 body = {
     "properties": {
         "codeInputType": "inline",
@@ -25,7 +25,7 @@ body = {
 }
 
 start = time.perf_counter()
-res = requests.post(url, json=body, headers={"Authorization": f"Bearer {os.getenv('AZ_TOKEN')}"})
+res = requests.post(url, json=body, headers=headers)
 end = time.perf_counter()
 
 print(res.status_code)
